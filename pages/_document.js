@@ -1,9 +1,9 @@
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-export const title = "Next.js PWA Boilerplate";
+export const title = "Allicin Final";
 const description =
-  "Next.js PWA Boilerplate starts your progressive web app off with a perfect Google Lighthouse score.";
+  "Allicin is the perfect social gathering network for your learning management needs.";
 const url = `https://next-pwa-boilerplate.now.sh`;
 const thumbnail = `${url}/static/graphics/thumbnail.png`;
 
