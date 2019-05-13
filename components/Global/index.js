@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+import media from '../MediaQueries';
+
 const GlobalStyle = createGlobalStyle`
 
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -69,7 +71,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.8;
   }
   main {
-    padding-top: 8rem;
+    padding-top: 6rem;
   }
 
   #__next {
@@ -77,4 +79,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const InnerDiv = styled.div`
+  margin: 0 auto;
+  padding: 0 2rem;
+  ${media.brotherbear`
+  
+    padding-left: calc(50vw - 512px - 20px);
+    padding-right: calc(50vw - 512px - 20px);
+   `}
+
+  a {
+    color: ${props => props.theme.contentLinksColor};
+    &:hover {
+      color: ${props => props.theme.contentLinksHover};
+    }
+  }
+`;
+
 export default GlobalStyle;
+
+export { InnerDiv };

@@ -9,12 +9,12 @@ const Footer = props => (
       <nav className="footer__nav">
         <ul className="footer__nav--list">
           <li className="footer__nav--item">
-            <Link href="/app/terms">
+            <Link href="/legal/terms">
               <a title="Terms">Terms</a>
             </Link>
           </li>
           <li className="footer__nav--item">
-            <Link href="/app/privacy">
+            <Link href="/legal/privacy">
               <a title="Privacy">Privacy</a>
             </Link>
           </li>

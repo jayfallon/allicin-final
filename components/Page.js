@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
 // import Slidedrawer from './Slidedrawer';
-import Header from './Header';
+import { HeaderIn, HeaderOut } from './Header';
 import Meta from './Meta';
 import Footer from './Footer';
 import Theme from './Theme';
@@ -12,46 +12,45 @@ import media from './MediaQueries';
 const StyledPage = styled.div`
   height: 100%;
   color: ${props => props.theme.bodyText};
-`;
-
-const Main = styled.main`
-  background-color: ${props => props.theme.mainBackground};
-  ${media.brotherbear`
-  
-    min-height: 50rem;
+  main {
+    background-color: ${props => props.theme.mainBackground};
+    ${media.brotherbear`
+      min-height: 50rem;
    `}
-`;
-
-const InnerDiv = styled.div`
-  margin: 0 auto;
-  padding: 0 2rem;
-  ${media.brotherbear`
-  
-    padding-left: calc(50vw - 512px - 20px);
-    padding-right: calc(50vw - 512px - 20px);
-   `}
-
-  a {
-    color: ${props => props.theme.contentLinksColor};
-    &:hover {
-      color: ${props => props.theme.contentLinksHover};
-    }
   }
 `;
 
 class Page extends Component {
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      headerIn: false,
+    };
+
+    this.headerStateToggle = this.headerStateToggle.bind(this);
   }
 
+  headerStateToggle = () => {
+    this.setState(prevState => ({ headerIn: !prevState.headerIn }));
+  };
+
   render() {
+    let header;
+
+    if (this.state.headerIn) {
+      header = <HeaderIn toggleHeader={this.headerStateToggle} />;
+    } else {
+      header = <HeaderOut toggleHeader={this.headerStateToggle} />;
+    }
+
     return (
       <ThemeProvider theme={Theme}>
         <StyledPage>
           <GlobalStyle />
           <Meta />
-          <Header />
-          <Main>{this.props.children}</Main>
+          {header}
+          <main>{this.props.children}</main>
           <Footer />
         </StyledPage>
       </ThemeProvider>

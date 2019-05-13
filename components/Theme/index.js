@@ -26,10 +26,10 @@ const Theme = {
   contentBackground: Colors.quarterPearlLustra,
   contentLinksColor: Colors.funBlue,
   contentLinksHover: Colors.electricViolet,
-  footerLinksColor: Colors.funBlue,
-  footerLinksHover: Colors.electricViolet,
+  footerLinksColor: Colors.mercury,
+  footerLinksHover: Colors.quarterPearlLustra,
 
-  globalNavLinksColor: Colors.white,
+  globalNavLinksColor: Colors.codGray,
   globalNavHover: Colors.tusk,
 
   pageMargin: '0 auto',
